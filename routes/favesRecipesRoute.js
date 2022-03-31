@@ -23,4 +23,12 @@ router.post('/', (req,res) => {
     });
 });
 
+// Get collection of faves recipes as array of objects
+router.get('/', (req, res) => {
+    fs.readFile('./data/favesRecipes.json', 'utf8', (err, data) => {
+        const recipesData = JSON.parse(data);
+        res.json(recipesData)
+    });
+});
+
 module.exports = router;

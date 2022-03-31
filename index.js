@@ -17,10 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // // routing
-app.use('/recipe', favesRecipes);
-
-
-// app.get('/')
+app.use('/recipes', favesRecipes);
 
 
 app.listen(PORT, () => {
