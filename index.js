@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 app.use('/recipe', favesRecipes);
 
 
-app.get('/')
+// app.get('/')
 
 
 app.listen(PORT, () => {
