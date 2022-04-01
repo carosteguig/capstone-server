@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
 router.delete('/:id/delete', (req, res) => {
     fs.readFile('./data/favesRecipes.json', 'utf8', (err, data) => {
         const recipesData = JSON.parse(data);
-        const recipeToDelete = req.params.id;
+        const recipeToDelete = Number(req.params.id);
         console.log(recipeToDelete);
         const newRecipeData = recipesData.filter(item => item.id !== recipeToDelete)
         fs.writeFile('./data/favesRecipes.json', JSON.stringify(newRecipeData), (err) => {
