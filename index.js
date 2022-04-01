@@ -21,5 +21,5 @@ app.use('/recipes', favesRecipes);
 
 
 app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
+    console.log(`Hello! My server is listening on port ${PORT}`);
 });  
