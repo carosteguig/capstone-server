@@ -31,4 +31,10 @@ router.get('/', (req, res) => {
     });
 });
 
+// Delete fave recipe
+// router.delete('/:id', (req, res) => {
+//     const { id } = req.params;
+//     res.send
+// })
+
 module.exports = router;
