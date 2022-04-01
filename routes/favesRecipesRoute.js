@@ -1,32 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-// const { v4: uuidv4 } = require('uuid'); PROBABLY NOT NNEDED AS THE RECIPES COME WITH IDs.
-
-// Adding a new recipe card to array in favesRecipes.json
-// router.post('/', (req, res) => {
-//     fs.readFile('./data/favesRecipes.json', 'utf8', (err, data) => {
-//         const recipesData = JSON.parse(data);
-//         //create new recipe object
-//         const newRecipe = {
-//             id: req.body.id,
-//             title: req.body.title,
-//             image: req.body.image,
-//             timestamp: new Date(),
-//         };
-//         // push new recipe into recipeData array
-//         recipesData.push(newRecipe);
-//         // Write new recipe object data into favesRecipes.json file
-//         fs.writeFile('./data/favesRecipes.json', JSON.stringify(recipesData), () => {
-//             if (err) {
-//                 res.send("error saving your fave recipe")
-//             } else {
-//                 res.json({ message: 'data added to file', data: recipesData });
-//             }
-//         });
-//     });
-// });
-
 
 router.post('/', (req, res) => {
     fs.readFile('./data/favesRecipes.json', 'utf8', (err, data) => {
@@ -38,7 +12,7 @@ router.post('/', (req, res) => {
             image: req.body.image,
             timestamp: new Date(),
         };
-        /////////////////////////////// NEW CODE
+        // Setting functionality to not save an existing fave recipe
         const foundRecipe = recipesData.find(
             (recipeId) => recipeId.id === newRecipe.id);
         console.log(foundRecipe);
@@ -46,7 +20,7 @@ router.post('/', (req, res) => {
            
             res.status(304).send("This recipes already exists")
         } else {
-        ///////////////////////////////
+
         // push new recipe into recipeData array
         recipesData.push(newRecipe);
         // Write new recipe object data into favesRecipes.json file
@@ -73,7 +47,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// Delete fave recipe
+// Delete fave recipe Review this
 router.delete('/:id/delete', (req, res) => {
     fs.readFile('./data/favesRecipes.json', 'utf8', (err, data) => {
         const recipesData = JSON.parse(data);
