@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const favesRecipes = require('./routes/favesRecipesRoute')
 require('dotenv').config(); // load .env variables
-
+ 
 const PORT = process.env.PORT || 5050;
 
 //Middleware
