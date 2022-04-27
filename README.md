@@ -1,5 +1,3 @@
-# capstone-server
-A complete recipe web app that allows users to create their own meal plans. Users can choose between 1 to 5 different ingredients and they get up to 10 recipes based on those ingredients.  Here you can find the back-end repo- https://github.com/carosteguig/capstone-client
 ![Simple Meal logo- small](https://user-images.githubusercontent.com/34225929/162877655-428effb2-1a2f-425d-aba1-3e4dc6082a0b.png)
 
 
